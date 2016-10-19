@@ -1,0 +1,9 @@
+K 13
+svn:externals
+V 121
+^/StdLib/trunk StdLib
+^/MgtLib/trunk MgtLib
+^/pgp2b_core/trunk pgp2b
+^/FirmwareCoreLibrary/trunk/EthernetLib EthernetLib
+
+END

@@ -1,0 +1,230 @@
+##############################################################################
+## This file is part of 'SLAC Firmware Standard Library'.
+## It is subject to the license terms in the LICENSE.txt file found in the 
+## top-level directory of this distribution and at: 
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html. 
+## No part of 'SLAC Firmware Standard Library', including this file, 
+## may be copied, modified, propagated, or distributed except according to 
+## the terms contained in the LICENSE.txt file.
+##############################################################################
+
+Device: &AxiSysMonUltraScale 
+  name: AxiSysMonUltraScale
+  description: AXI-Lite System Managment for Xilinx Ultra Scale (Refer to PG185 and UG580)
+  size: 0x800
+  #########
+  IntField:
+  #########
+    #########################################################
+    # - offset: 0x00 
+      # name: SRR
+      # mode: WO
+      # description: |
+        # The Software Reset register permits you to reset the System Management Wizard IP core 
+        # including the SYSMON hard macro output ports (except JTAG-related outputs) 
+        # independently of other IP cores in the systems. To activate a software reset, write 
+        # 0x0000_000A to the register. Any other access, read or write, has undefined results.
+    #########################################################
+    - offset: 0x04 
+      name: SR
+      mode: RO
+      description: Status Register
+    #########################################################
+    - offset: 0x08
+      name: AOSR
+      mode: RO
+      description: Alarm Output Status Register    
+    #########################################################
+    - offset: 0x0C
+      name: CONVSTR
+      mode: WO
+      description: CONVST Register
+    #########################################################
+    - offset: 0x10
+      name: SYSMONRR
+      mode: WO
+      description: SYSMON Hard Macro Reset Register  
+    #########################################################
+    - offset: 0x5C
+      name: GIER
+      mode: RW
+      description: Global Interrupt Enable Register   
+    #########################################################
+    - offset: 0x60
+      name: IPISR
+      mode: RO
+      description: IP Interrupt Status Register
+    #########################################################
+    - offset: 0x68
+      name: IPIER
+      mode: RW
+      description: IP Interrupt Enable Register   
+    #########################################################
+    - offset: 0x400
+      name: Temperature
+      mode: RO
+      description: Temperature's ADC value  
+    #########################################################
+    - offset: 0x404
+      name: VCCINT
+      mode: RO
+      description: VCCINT's ADC value     
+    #########################################################
+    - offset: 0x408
+      name: VCCAUX
+      mode: RO
+      description: VCCAUX's ADC value     
+    #########################################################
+    - offset: 0x40C
+      name: VP_VN
+      mode: RO
+      description: VP/VN's ADC value      
+    #########################################################
+    - offset: 0x410
+      name: VREFP
+      mode: RO
+      description: VREFP's ADC value  
+    #########################################################
+    - offset: 0x414
+      name: VREFN
+      mode: RO
+      description: VREFN's ADC value    
+    #########################################################
+    - offset: 0x418
+      name: VBRAM
+      mode: RO
+      description: VBRAM's ADC value  
+    #########################################################
+    - offset: 0x420
+      name: SupplyOffset
+      mode: RO
+      description: Supply Offset     
+    #########################################################
+    - offset: 0x424
+      name: ADCOffset
+      mode: RO
+      description: ADC Offset   
+    #########################################################
+    - offset: 0x428
+      name: GainError
+      mode: RO
+      description: Gain Error        
+    #########################################################
+    - offset: 0x440
+      name: VAUXP_VAUXN
+      nelms: 16
+      mode: RO
+      description: VAUXP_VAUXN's ADC values       
+    #########################################################
+    - offset: 0x480
+      name: MaxTemp
+      mode: RO
+      description: maximum temperature measurement
+    #########################################################
+    - offset: 0x484
+      name: MaxVCCINT
+      mode: RO
+      description: maximum VCCINT measurement      
+    #########################################################
+    - offset: 0x488
+      name: MaxVCCAUX
+      mode: RO
+      description: maximum VCCAUX measurement  
+    #########################################################
+    - offset: 0x48C
+      name: MaxVBRAM
+      mode: RO
+      description: maximum VBRAM measurement  
+    #########################################################
+    - offset: 0x490
+      name: MinTemp
+      mode: RO
+      description: minimum temperature measurement
+    #########################################################
+    - offset: 0x494
+      name: MinVCCINT
+      mode: RO
+      description: minimum VCCINT measurement      
+    #########################################################
+    - offset: 0x498
+      name: MinVCCAUX
+      mode: RO
+      description: minimum VCCAUX measurement  
+    #########################################################
+    - offset: 0x49C
+      name: MinVBRAM
+      mode: RO
+      description: minimum VBRAM measurement        
+    #########################################################
+    - offset: 0x4E0
+      name: I2C_Address
+      mode: RO
+      description: I2C Address
+    #########################################################
+    - offset: 0x4FC
+      name: FlagRegister
+      mode: RO
+      description: Flag Register   
+    #########################################################
+    - offset: 0x500
+      name: ConfigurationRegister
+      nelms: 4
+      mode: RW
+      description: Configuration Registers 
+    #########################################################
+    - offset: 0x518
+      name: SequenceRegister8
+      mode: RW
+      description: Sequence Register 8  
+    #########################################################
+    - offset: 0x51C
+      name: SequenceReg9
+      mode: RW
+      description: Sequence Register 9
+    #########################################################
+    - offset: 0x520
+      name: SequenceReg_7_0
+      nelms: 8
+      mode: RW
+      description: Sequence Register [7:0]
+    #########################################################
+    - offset: 0x540
+      name: AlarmThresholdReg_8_0
+      nelms: 9
+      mode: RW
+      description: Alarm Threshold Register [8:0]
+    #########################################################
+    - offset: 0x570
+      name: AlarmThresholdReg12
+      mode: RW
+      description: Alarm Threshold Register 12    
+    #########################################################
+    - offset: 0x580
+      name: AlarmThresholdReg16
+      mode: RW
+      description: Alarm Threshold Register 16
+    #########################################################
+    - offset: 0x580
+      name: AlarmThresholdReg_25_16
+      nelms: 8
+      mode: RW
+      description: Alarm Threshold Register [25:16]  
+    #########################################################
+    - offset: 0x600
+      name: VUSER
+      nelms: 4
+      mode: RO
+      description: VUSER[4:0] supply monitor measurement
+    #########################################################
+    - offset: 0x680
+      name: MAX_VUSER
+      nelms: 4
+      mode: RO
+      description: Maximum VUSER[4:0] supply monitor measurement
+    #########################################################
+    - offset: 0x6A0
+      name: MIN_VUSER
+      nelms: 4
+      mode: RO
+      description: Minimum VUSER[4:0] supply monitor measurement
+    #########################################################

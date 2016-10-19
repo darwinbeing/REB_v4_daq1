@@ -1,0 +1,6 @@
+K 13
+svn:externals
+V 110
+^/ExampleProject/trunk/firmware/dcp/XauiGth7Dcp/images/XauiGth7Core_block_00000001.dcp XauiGth7Core_block.dcp
+
+END

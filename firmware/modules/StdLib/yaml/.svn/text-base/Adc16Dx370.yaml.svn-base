@@ -1,0 +1,264 @@
+
+##############################################################################
+## This file is part of 'SLAC Firmware Standard Library'.
+## It is subject to the license terms in the LICENSE.txt file found in the 
+## top-level directory of this distribution and at: 
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html. 
+## No part of 'SLAC Firmware Standard Library', including this file, 
+## may be copied, modified, propagated, or distributed except according to 
+## the terms contained in the LICENSE.txt file.
+##############################################################################
+
+Device: &Adc16Dx370 
+  name: Adc16Dx370
+  description: ADC16Dx370 Module
+  size: 0x00100000
+  #########
+  IntField:
+  #########
+  
+    #########################################################
+    #
+    #   Control registers
+    #
+    #########################################################
+    - offset: 0x000
+      name: AdcReg_0x0000
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x008
+      name: AdcReg_0x0002
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x038
+      name: AdcReg_0x000E
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x03C
+      name: AdcReg_0x000F
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x040
+      name: AdcReg_0x0010
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x044
+      name: AdcReg_0x0011
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x048
+      name: AdcReg_0x0012
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x04C
+      name: AdcReg_0x0013
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x050
+      name: AdcReg_0x0014
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x054
+      name: AdcReg_0x0015
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x064
+      name: AdcReg_0x0019
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x0EC
+      name: AdcReg_0x003B
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x0F0
+      name: AdcReg_0x003C
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x0F4
+      name: AdcReg_0x003D
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x11C
+      name: AdcReg_0x0047
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x180
+      name: AdcReg_0x0060
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x184
+      name: AdcReg_0x0061
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x188
+      name: AdcReg_0x0062
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x18C
+      name: AdcReg_0x0063
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    - offset: 0x1C0
+      name: AdcReg_0x0070
+      sizeBits: 8
+      mode: RW
+      description: ADC Control Registers
+    #########################################################
+    #
+    #   Status registers
+    #
+    #########################################################
+    - offset: 0x00C
+      name: ID_DEVICE_TYPE
+      sizeBits: 8
+      mode: RO
+      description: ID_DEVICE_TYPE 
+    #########################################################
+    - offset: 0x010
+      name: ID_PROD_UPPER
+      sizeBits: 8
+      mode: RO
+      description: ID_PROD_UPPER 
+    #########################################################
+    - offset: 0x014
+      name: ID_PROD_LOWER
+      sizeBits: 8
+      mode: RO
+      description: ID_PROD_LOWER 
+    #########################################################
+    - offset: 0x018
+      name: ID_MASKREV
+      sizeBits: 8
+      mode: RO
+      description: ID_MASKREV 
+    #########################################################
+    - offset: 0x030
+      name: ID_VNDR_UPPER
+      sizeBits: 8
+      mode: RO
+      description: ID_VNDR_UPPER     
+    #########################################################
+    - offset: 0x034
+      name: ID_VNDR_LOWER
+      sizeBits: 8
+      mode: RO
+      description: ID_VNDR_LOWER           
+    #########################################################
+    - offset: 0x1B0
+      name: Clock_ready
+      sizeBits: 1    
+      lsBit: 0
+      mode: RO
+      description: Clock_ready      
+    #########################################################
+    - offset: 0x1B0
+      name: Calibration_done
+      sizeBits: 1    
+      lsBit: 1
+      mode: RO
+      description: Calibration_done    
+    #########################################################
+    - offset: 0x1B0
+      name: PLL_lock
+      sizeBits: 1    
+      lsBit: 2
+      mode: RO
+      description: PLL_lock     
+    #########################################################
+    - offset: 0x1B0
+      name: Aligned_to_sysref
+      sizeBits: 1    
+      lsBit: 3
+      mode: RO
+      description: Aligned_to_sysref 
+    #########################################################
+    - offset: 0x1B0
+      name: Realigned_to_sysref
+      sizeBits: 1    
+      lsBit: 4
+      mode: RO
+      description: Realigned_to_sysref    
+    #########################################################
+    - offset: 0x1B0
+      name: Sync_form_FPGA
+      sizeBits: 1    
+      lsBit: 5
+      mode: RO
+      description: Sync_form_FPGA    
+    #########################################################
+    - offset: 0x1B0
+      name: Link_active
+      sizeBits: 1    
+      lsBit: 6
+      mode: RO
+      description: Link_active          
+    #########################################################
+  #########
+  Commands:
+  #########
+    #########################################################
+    - name: PowerDown
+      description: "PowerDown" 
+      sequence:
+        - entry: "AdcReg_0x0002"
+          value: 0x3
+    #########################################################
+    - name: PowerUp
+      description: "PowerUp" 
+      sequence:
+        - entry: "AdcReg_0x0002"
+          value: 0x0          
+    #########################################################
+    - name: CalibrateAdc
+      description: "CalibrateAdc" 
+      sequence:
+        # Power Down
+        - entry: PowerDown
+          value: 0x1          
+        # 1000 ms sleep
+        - entry: usleep
+          value: 1000000 
+
+        # Power Up
+        - entry: PowerUp
+          value: 0x1          
+    #########################################################
+    
